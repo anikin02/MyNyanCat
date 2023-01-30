@@ -30,12 +30,17 @@ public class Player : MonoBehaviour
         while(Playing)
         {
             yield return new WaitForSeconds(1.0f);
-            addScore(1);
+            AddScore(1);
         }
     }
 
-    public void addScore(int points)
+    public void AddScore(int points)
     {
         Score += points;
+    }
+
+    public void SubtractScore(int points)
+    {
+        Score -= points;
     }
 }
