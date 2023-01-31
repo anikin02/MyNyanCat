@@ -3,13 +3,31 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int damage = 1; 
+    [SerializeField] private float moveSpeed = 0;
+    private bool isActive = true;
+
+    private void Update()
+    {
+        move();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {   
-        print(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Player")
+        if(!isActive)
         {
-            print("AHAHAHAHAHAHAH");
-            collision.gameObject.GetComponent<Player>().SubtractScore(damage);
+            return;
         }
+
+        Player player = collision.gameObject.GetComponent<Player>();
+        if (player)
+        {
+            
+            player.SubtractScore(damage);
+        }
+    }
+
+    private void move()
+    {
+        transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
     }
 }

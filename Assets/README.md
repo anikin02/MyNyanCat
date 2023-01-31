@@ -9,5 +9,5 @@ I took graphics, music, sounds and font from the internet.
 2. **Score Managment**
 3. Stars Generation
 4. Different types of NyanCat
-5. Enemys and their generation
+5. **Enemys and their generation**
 6. Control from the phone

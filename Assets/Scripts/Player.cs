@@ -5,19 +5,24 @@ public class Player : MonoBehaviour
 {
     public int Score = 0;
     public bool Playing = true;
-    [SerializeField] private float moveSpeed = 1f;
+    private bool isIncredible = false;
+    [SerializeField] private float moveSpeedStandart = 1f;
+    [SerializeField] private float moveSpeedIncredible = 10f;
     [SerializeField] private SpawnerRainbow spawnerRainbow;
+
+    private float moveSpeed;
 
     private void Start()
     {
+        moveSpeed = moveSpeedStandart;
         StartCoroutine(upScore());
     }
     private void Update()
     {
-        Move();
+        move();
     }
 
-    private void Move()
+    private void move()
     {
         var vertical = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         transform.Translate(moveSpeed * Time.deltaTime, vertical, 0);
@@ -41,6 +46,16 @@ public class Player : MonoBehaviour
 
     public void SubtractScore(int points)
     {
-        Score -= points;
+        if(isIncredible)
+        {
+            Score -= points;
+        }
+    }
+
+    // function that gives the player incredible strength for 10 seconds
+    private void incredible()
+    {
+        isIncredible = true;
+        moveSpeed = moveSpeedIncredible;   
     }
 }
