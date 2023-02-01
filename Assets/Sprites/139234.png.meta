@@ -23,6 +23,18 @@ TextureImporter:
   - first:
       213: -2747216477080516851
     second: Rainbow
+  - first:
+      213: 4828283798801675350
+    second: Cape-1
+  - first:
+      213: 8614866216500380220
+    second: Cape-2
+  - first:
+      213: -7334168072287542345
+    second: Cape-3
+  - first:
+      213: 5954113493814156750
+    second: Cape-4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -266,6 +278,90 @@ TextureImporter:
       bones: []
       spriteID: d0704826b2defd9d0800000000000000
       internalID: -2747216477080516851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cape-1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 202
+        width: 77
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654f85e9882810340800000000000000
+      internalID: 4828283798801675350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cape-2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 204
+        width: 78
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c32c40e2e272e8770800000000000000
+      internalID: 8614866216500380220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cape-3
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 203
+        width: 78
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b32a401ffcc73a90800000000000000
+      internalID: -7334168072287542345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cape-4
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 204
+        width: 78
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd17272da241a250800000000000000
+      internalID: 5954113493814156750
       vertices: []
       indices: 
       edges: []

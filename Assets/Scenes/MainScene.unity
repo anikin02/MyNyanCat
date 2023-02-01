@@ -285,6 +285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 766543099}
+  - {fileID: 1670998719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,12 +438,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 766543098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b53484c093c94a54083016b9bbae05d5, type: 3}
+  m_Script: {fileID: 11500000, guid: c34dd1d27fe639440a875d0a6e1672af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Playing: 1
-  delay: 3
-  prefab: {fileID: 4677599220828435684, guid: d6bed83d89b8d8f469b162981e35fd18, type: 3}
+  delay: 6
+  prefabs:
+  - {fileID: 4677599220828435684, guid: d6bed83d89b8d8f469b162981e35fd18, type: 3}
 --- !u!1 &1077457664
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +666,8 @@ MonoBehaviour:
   Score: 0
   Playing: 1
   moveSpeedStandart: 3
-  moveSpeedIncredible: 10
+  moveSpeedCape: 6
+  "moveSpeedRo\u0441ket": 12
   spawnerRainbow: {fileID: 2000394429}
 --- !u!61 &1118572408
 BoxCollider2D:
@@ -713,6 +716,53 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &1670998718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670998719}
+  - component: {fileID: 1670998720}
+  m_Layer: 0
+  m_Name: GeneratorPowerUP
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1670998719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670998718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.58, y: -0.06, z: 6.0210714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670998720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670998718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34dd1d27fe639440a875d0a6e1672af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playing: 1
+  delay: 11
+  prefabs:
+  - {fileID: 4224031440708203550, guid: 414b08fd616abca4b8a5494d73c40ac3, type: 3}
 --- !u!1 &2000394426
 GameObject:
   m_ObjectHideFlags: 0

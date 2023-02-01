@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     {
         move();
     }
+    private void move()
+    {
+        transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {   
@@ -21,13 +25,8 @@ public class Enemy : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         if (player)
         {
-            
+            isActive = false;
             player.SubtractScore(damage);
         }
-    }
-
-    private void move()
-    {
-        transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
     }
 }

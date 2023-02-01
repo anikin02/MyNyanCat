@@ -5,17 +5,27 @@ public class Player : MonoBehaviour
 {
     public int Score = 0;
     public bool Playing = true;
-    private bool isIncredible = false;
+    private bool isPowerUp = false;
     [SerializeField] private float moveSpeedStandart = 1f;
-    [SerializeField] private float moveSpeedIncredible = 10f;
+    [SerializeField] private float moveSpeedCape = 10f;
+    [SerializeField] private float moveSpeedRoсket = 10f;
     [SerializeField] private SpawnerRainbow spawnerRainbow;
 
     private float moveSpeed;
 
+    private IEnumerator upScore;
+    private IEnumerator durationPowerUp;
+    private Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         moveSpeed = moveSpeedStandart;
-        StartCoroutine(upScore());
+        upScore = upScoreCoroutine();
+        durationPowerUp = PowerUpCoroutine();
+
+        StartCoroutine(upScore);
     }
     private void Update()
     {
@@ -30,12 +40,21 @@ public class Player : MonoBehaviour
         spawnerRainbow.CreateRainbow();
     }
 
-    private IEnumerator upScore()
+    private IEnumerator upScoreCoroutine()
     {   
         while(Playing)
         {
             yield return new WaitForSeconds(1.0f);
             AddScore(1);
+        }
+    }
+    private IEnumerator PowerUpCoroutine()
+    {   
+        while(Playing)
+        {
+            yield return new WaitForSeconds(10.0f);
+            moveSpeed = moveSpeedStandart;
+            PowerUp(999);
         }
     }
 
@@ -46,16 +65,40 @@ public class Player : MonoBehaviour
 
     public void SubtractScore(int points)
     {
-        if(isIncredible)
+        if(!isPowerUp)
         {
             Score -= points;
         }
     }
 
-    // function that gives the player incredible strength for 10 seconds
-    private void incredible()
+    // Function that gives the player powerUp.
+    // 0 - cape
+    // 1 - rocket
+    public void PowerUp(int type)
     {
-        isIncredible = true;
-        moveSpeed = moveSpeedIncredible;   
+        switch(type)
+        {
+            case 0:
+                moveSpeed = moveSpeedCape;
+                StartCoroutine(durationPowerUp);
+                AddScore(10);
+                animator.SetBool("isNormal", false);
+                animator.SetBool("isCape", true);
+                break;
+            case 1:
+                moveSpeed = moveSpeedRoсket;
+                StartCoroutine(durationPowerUp);
+                AddScore(25);
+                animator.SetBool("isNormal", false);
+                animator.SetBool("isRocket", true);
+                break;
+            default:
+                StopCoroutine(durationPowerUp);
+                durationPowerUp = PowerUpCoroutine();
+                animator.SetBool("isCape", false);
+                animator.SetBool("isRocket", false);
+                animator.SetBool("isNormal", true);
+                break;
+        }
     }
 }
