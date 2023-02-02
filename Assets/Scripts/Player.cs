@@ -11,11 +11,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeedRoсket = 10f;
     [SerializeField] private SpawnerRainbow spawnerRainbow;
 
+    [SerializeField] private FixedJoystick fixedJoystick;
+
     private float moveSpeed;
 
     private IEnumerator upScore;
     private IEnumerator durationPowerUp;
     private Animator animator;
+
+    private float vertical;
 
     private void Start()
     {
@@ -34,8 +38,17 @@ public class Player : MonoBehaviour
 
     private void move()
     {
-        var vertical = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        transform.Translate(moveSpeed * Time.deltaTime, vertical, 0);
+        vertical = fixedJoystick.Vertical;
+        var verticalPosition = vertical * moveSpeed * Time.deltaTime;
+        
+        if ((transform.position.y + verticalPosition > -4.7f) && (transform.position.y + verticalPosition < 4.7f))
+        {
+            transform.Translate(moveSpeed * Time.deltaTime, verticalPosition, 0);
+        }
+        else
+        {
+            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+        }
 
         spawnerRainbow.CreateRainbow();
     }

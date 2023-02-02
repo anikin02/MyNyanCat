@@ -9,5 +9,13 @@ I took graphics, music, sounds and font from the internet.
 2. **Score Managment**
 3. **Stars Generation**
 4. **Different types of NyanCat: Cape and Rocket**
-1. **Enemys and their generation**
-2. Control from the phone
+5. **Enemys and their generation**
+6. **Control from the phone**
+
+## **Plans:**
+1. Main menu
+2. Save score
+3. New enemy
+4. Fix Simple stars generation
+5. Balance speed
+6. Sounds
