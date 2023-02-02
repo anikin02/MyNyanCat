@@ -35,6 +35,18 @@ TextureImporter:
   - first:
       213: 5954113493814156750
     second: Cape-4
+  - first:
+      213: 2653202460277011810
+    second: Rocket-1
+  - first:
+      213: -8713368293279711560
+    second: Rocket-2
+  - first:
+      213: -6807973338887476009
+    second: Rocket-3
+  - first:
+      213: -674520287216976473
+    second: Rocket-4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -291,7 +303,7 @@ TextureImporter:
         width: 77
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -312,7 +324,7 @@ TextureImporter:
         width: 78
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -333,7 +345,7 @@ TextureImporter:
         width: 78
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -354,7 +366,7 @@ TextureImporter:
         width: 78
         height: 36
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,6 +374,90 @@ TextureImporter:
       bones: []
       spriteID: ecd17272da241a250800000000000000
       internalID: 5954113493814156750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket-1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 150
+        width: 106
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265f002949112d420800000000000000
+      internalID: 2653202460277011810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket-2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 151
+        width: 121
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be39e1e3b5e31780800000000000000
+      internalID: -8713368293279711560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket-3
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 154
+        width: 103
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc284781583581a0800000000000000
+      internalID: -6807973338887476009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rocket-4
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 153
+        width: 118
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad33ae5f5f93a6f0800000000000000
+      internalID: -674520287216976473
       vertices: []
       indices: 
       edges: []

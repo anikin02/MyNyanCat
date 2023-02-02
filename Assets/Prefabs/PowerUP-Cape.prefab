@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4224031440708203544}
   - component: {fileID: 4224031440708203545}
   - component: {fileID: -411347146925925530}
+  - component: {fileID: 6740061423315510226}
   m_Layer: 0
   m_Name: PowerUP-Cape
   m_TagString: Untagged
@@ -124,3 +125,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.05, y: 0.45}
   m_EdgeRadius: 0
+--- !u!114 &6740061423315510226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4224031440708203550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b66a5f2acd23b448fe6f82df03adf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

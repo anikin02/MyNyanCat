@@ -7,6 +7,9 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + offset, 0, -10);
+        if (player.transform.position.x + offset > 0)
+        {
+            transform.position = new Vector3(player.transform.position.x + offset, 0, -10);
+        }
     }   
 }
