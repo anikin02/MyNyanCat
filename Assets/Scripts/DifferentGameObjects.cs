@@ -15,7 +15,7 @@ public class DifferentGameObjects : MonoBehaviour
 
     private void deleteNeedless()
     {
-        if (player.transform.position.x - transform.position.x > 30)
+        if (player.transform.position.x - transform.position.x > 40)
         {
             Destroy(gameObject);
         }

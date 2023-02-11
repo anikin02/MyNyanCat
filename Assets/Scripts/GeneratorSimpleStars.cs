@@ -15,10 +15,10 @@ public class GeneratorSimpleStars : MonoBehaviour
     {
         if ((tempPositionX + offset) <= transform.position.x)
         {
-            Vector2 position = new Vector2(transform.position.x, 3.5f);
+            Vector3 position = new Vector3(transform.position.x, 3.5f, 0);
             GameObject newGameObject = Instantiate(
                 prefab,
-                transform.position,
+                position,
                 new Quaternion());
             tempPositionX = transform.position.x;
         }

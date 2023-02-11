@@ -2,13 +2,21 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - CameraScript
+    - CatMenu
+    - ChangeScene
     - DifferentGameObjects
     - Enemy
     - FixedJoystick
     - GeneratorSimpleStars
     - GeneratorVertical
+    - Heart
+    - LoadSave
     - Player
     - PowerUP
+    - RecordManager
+    - RecordUI
+    - RestartGame
+    - SaveGame
     - ScoreManager
     - SpawnerRainbow
     - StarPoints
@@ -30,8 +38,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -40,12 +50,76 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/MainMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2264}
+    - Class: 114
+      Script: {instanceID: 2584}
+    - Class: 114
+      Script: {instanceID: 2700}
+    - Class: 114
+      Script: {instanceID: 2874}
+    - Class: 114
+      Script: {instanceID: 2900}
+    - Class: 114
+      Script: {instanceID: 3112}
+    - Class: 114
+      Script: {instanceID: 3362}
+    - Class: 114
+      Script: {instanceID: 3482}
+    - Class: 114
+      Script: {instanceID: 3798}
+    - Class: 114
+      Script: {instanceID: 4506}
+    - Class: 114
+      Script: {instanceID: 4540}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/MainScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -78,41 +152,53 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1454}
     - Class: 114
-      Script: {instanceID: 2250}
+      Script: {instanceID: 1494}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2136}
     - Class: 114
-      Script: {instanceID: 2434}
+      Script: {instanceID: 2264}
     - Class: 114
-      Script: {instanceID: 2682}
+      Script: {instanceID: 2380}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2856}
+      Script: {instanceID: 2450}
     - Class: 114
-      Script: {instanceID: 3092}
+      Script: {instanceID: 2584}
     - Class: 114
-      Script: {instanceID: 3340}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 3542}
+      Script: {instanceID: 2768}
     - Class: 114
-      Script: {instanceID: 3776}
+      Script: {instanceID: 2874}
     - Class: 114
-      Script: {instanceID: 4324}
+      Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 4848}
+      Script: {instanceID: 3362}
     - Class: 114
-      Script: {instanceID: 5414}
+      Script: {instanceID: 3482}
     - Class: 114
-      Script: {instanceID: 5694}
+      Script: {instanceID: 3564}
     - Class: 114
-      Script: {instanceID: 5718}
+      Script: {instanceID: 3798}
     - Class: 114
-      Script: {instanceID: 5760}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 22604}
+      Script: {instanceID: 4880}
+    - Class: 114
+      Script: {instanceID: 5448}
+    - Class: 114
+      Script: {instanceID: 5728}
+    - Class: 114
+      Script: {instanceID: 5752}
+    - Class: 114
+      Script: {instanceID: 5794}
+    - Class: 114
+      Script: {instanceID: 23294}
+    - Class: 114
+      Script: {instanceID: 26886}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -134,16 +220,28 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 5ab533713adae59372fb3e10a585c186
-    assemblyName: Unity.Timeline.dll
-    namespaceName: UnityEngine.Timeline
-    className: AnimationPlayableAsset
-  - hash:
-      serializedVersion: 2
       Hash: a6e561615949734e9f12f9b61661f43e
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SaveGame
+  - hash:
+      serializedVersion: 2
+      Hash: 5ab533713adae59372fb3e10a585c186
+    assemblyName: Unity.Timeline.dll
+    namespaceName: UnityEngine.Timeline
+    className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
@@ -200,6 +298,12 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -212,10 +316,22 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FixedJoystick
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 9dac16f3efc511835ac976dfae55f580
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VariableJoystick
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -242,6 +358,12 @@ ScriptsOnlyBuild:
     className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
+      Hash: aef9386513e10c2b58b4c2172faf4e3c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RecordManager
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -264,6 +386,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: IKManager2D
+  - hash:
+      serializedVersion: 2
+      Hash: c945f4f74c13e6cb27bfff08cd2f6a9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ChangeScene
   - hash:
       serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
@@ -306,6 +434,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadSave
   - hash:
       serializedVersion: 2
       Hash: 760787567e1b60d64a3e421ab83ee14a
@@ -354,6 +488,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 9e27f44bbf48228f203a37254d40f8ae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickSetterExample
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -500,6 +640,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatingJoystick
+  - hash:
+      serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -512,7 +658,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 026e5579848c95d3ed9c8588b2757abe
+      Hash: e0d0b2b71c47b30510a882c4e064fe58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -534,6 +680,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 6a9018b39fdd9ccdd6a2a10115fd198b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RecordUI
+  - hash:
+      serializedVersion: 2
+      Hash: a8c95a3d4e5a9513254f6c4d158e753a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CatMenu
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -612,6 +770,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkinEntity
+  - hash:
+      serializedVersion: 2
+      Hash: 528e9858840cb8370d93939fff6b42d9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JoystickPlayerExample
   - hash:
       serializedVersion: 2
       Hash: 28cfb4bd305dd11c6326cc3ee7c14138
@@ -704,47 +868,18 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DynamicJoystick
+    className: Heart
   - hash:
       serializedVersion: 2
-      Hash: ce669872a2be11bc686ea22961d8a3bb
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: FloatingJoystick
-  - hash:
-      serializedVersion: 2
-      Hash: 9dac16f3efc511835ac976dfae55f580
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: VariableJoystick
-  - hash:
-      serializedVersion: 2
-      Hash: ce669872a2be11bc686ea22961d8a3bb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Joystick
-  - hash:
-      serializedVersion: 2
-      Hash: 528e9858840cb8370d93939fff6b42d9
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: JoystickPlayerExample
-  - hash:
-      serializedVersion: 2
-      Hash: 9e27f44bbf48228f203a37254d40f8ae
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: JoystickSetterExample
-  - hash:
-      serializedVersion: 2
-      Hash: ce669872a2be11bc686ea22961d8a3bb
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FixedJoystick
+    className: RestartGame
   platform: 13
   scenePathNames:
+  - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/MainScene.unity
-  playerPath: C:/Users/1/Documents/GitHub/MyNyanCat/instalNyanCat.apk
+  playerPath: C:/Users/1/Desktop/instalNyanCat.apk

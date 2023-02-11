@@ -13,9 +13,12 @@ I took graphics, music, sounds and font from the internet.
 6. **Control from the phone**
 
 ## **Plans:**
-1. Main menu
+1. **Main menu**
 2. Save score
 3. New enemy
-4. Fix Simple stars generation
-5. Balance speed
-6. Sounds
+4. **Fix Simple stars generation**
+5. **Balance speed**
+6. **Music**
+7. Sounds
+8. **Restart Key**
+9. **Health**

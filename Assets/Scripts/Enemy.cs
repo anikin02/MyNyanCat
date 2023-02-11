@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         if (player)
         {
             isActive = false;
-            player.SubtractScore(damage);
+            player.TakingDamage(damage);
         }
     }
 }

@@ -10,9 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeedCape = 10f;
     [SerializeField] private float moveSpeedRoсket = 10f;
     [SerializeField] private SpawnerRainbow spawnerRainbow;
+    [SerializeField] private Heart heartFirst;
+    [SerializeField] private Heart heartSecond;
+    [SerializeField] private Heart heartThird;
+    [SerializeField] private RestartGame buttonRestart;
 
     [SerializeField] private FixedJoystick fixedJoystick;
 
+    private int health = 3;
     private float moveSpeed;
 
     private IEnumerator upScore;
@@ -34,23 +39,27 @@ public class Player : MonoBehaviour
     private void Update()
     {
         move();
+        die();
     }
 
     private void move()
     {
-        vertical = fixedJoystick.Vertical;
-        var verticalPosition = vertical * moveSpeed * Time.deltaTime;
-        
-        if ((transform.position.y + verticalPosition > -4.7f) && (transform.position.y + verticalPosition < 4.7f))
+        if (Playing)
         {
-            transform.Translate(moveSpeed * Time.deltaTime, verticalPosition, 0);
-        }
-        else
-        {
-            transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
-        }
+            vertical = fixedJoystick.Vertical;
+            var verticalPosition = vertical * moveSpeed * Time.deltaTime;
+            
+            if ((transform.position.y + verticalPosition > -4.7f) && (transform.position.y + verticalPosition < 4.7f))
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, verticalPosition, 0);
+            }
+            else
+            {
+                transform.Translate(moveSpeed * Time.deltaTime, 0, 0);
+            }
 
-        spawnerRainbow.CreateRainbow();
+            spawnerRainbow.CreateRainbow();
+        }
     }
 
     private IEnumerator upScoreCoroutine()
@@ -78,9 +87,33 @@ public class Player : MonoBehaviour
 
     public void SubtractScore(int points)
     {
-        if(!isPowerUp)
+
+         Score -= points;
+
+    }
+
+    public void TakingDamage(int damage)
+    {
+        if (!isPowerUp)
         {
-            Score -= points;
+            SubtractScore(damage);
+
+            switch(health)
+            {
+                case 3:
+                    heartThird.LoseHeart();
+                    break;
+                case 2:
+                    heartSecond.LoseHeart();
+                    break;
+                case 1:
+                    heartFirst.LoseHeart();
+                    break;
+                default:
+                    break;
+            }
+
+            health--;
         }
     }
 
@@ -89,6 +122,8 @@ public class Player : MonoBehaviour
     // 1 - rocket
     public void PowerUp(int type)
     {
+        isPowerUp = true;
+
         switch(type)
         {
             case 0:
@@ -106,12 +141,25 @@ public class Player : MonoBehaviour
                 animator.SetBool("isRocket", true);
                 break;
             default:
+                isPowerUp = false;
                 StopCoroutine(durationPowerUp);
                 durationPowerUp = PowerUpCoroutine();
                 animator.SetBool("isCape", false);
                 animator.SetBool("isRocket", false);
                 animator.SetBool("isNormal", true);
                 break;
+        }
+    }
+
+    private void die()
+    {
+        if (health == 0)
+        {
+            Playing = false;
+
+            GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            buttonRestart.EnableButton();
         }
     }
 }
