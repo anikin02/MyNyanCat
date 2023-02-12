@@ -14,11 +14,9 @@ I took graphics, music, sounds and font from the internet.
 
 ## **Plans:**
 1. **Main menu**
-2. Save score
-3. New enemy
-4. **Fix Simple stars generation**
-5. **Balance speed**
-6. **Music** + Stop music when player is dying
-7. Sounds
-8. **Restart Key**
-9. **Health**
+2. **Save score**
+3. **Fix Simple stars generation**
+4. **Balance speed**
+5. **Music + Stop music when player is dying**
+6. **Restart Key**
+7. **Health**

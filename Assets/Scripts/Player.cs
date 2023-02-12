@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
     public int Score = 0;
     public bool Playing = true;
     private bool isPowerUp = false;
+
+    [SerializeField] private float blinkTime = 0.5f;
     [SerializeField] private float moveSpeedStandart = 1f;
     [SerializeField] private float moveSpeedCape = 10f;
     [SerializeField] private float moveSpeedRoсket = 10f;
@@ -13,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Heart heartFirst;
     [SerializeField] private Heart heartSecond;
     [SerializeField] private Heart heartThird;
+    [SerializeField] private GameObject music;
     [SerializeField] private RestartGame buttonRestart;
 
     [SerializeField] private FixedJoystick fixedJoystick;
@@ -87,9 +90,14 @@ public class Player : MonoBehaviour
 
     public void SubtractScore(int points)
     {
-
          Score -= points;
+    }
 
+    private IEnumerator blink()
+    {   
+        GetComponent<SpriteRenderer>().color = new Color32(205,120,120,255);
+        yield return new WaitForSeconds(blinkTime);
+        GetComponent<SpriteRenderer>().color = new Color32(255,255,255,255);
     }
 
     public void TakingDamage(int damage)
@@ -97,6 +105,7 @@ public class Player : MonoBehaviour
         if (!isPowerUp)
         {
             SubtractScore(damage);
+            StartCoroutine("blink");
 
             switch(health)
             {
@@ -156,7 +165,8 @@ public class Player : MonoBehaviour
         if (health == 0)
         {
             Playing = false;
-
+            
+            music.GetComponent<AudioSource>().mute = true;
             GetComponent<Rigidbody2D>().gravityScale = 0.5f;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             buttonRestart.EnableButton();

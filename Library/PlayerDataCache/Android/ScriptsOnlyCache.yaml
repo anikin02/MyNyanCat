@@ -24,6 +24,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -70,6 +71,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -187,15 +192,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4882}
     - Class: 114
-      Script: {instanceID: 5450}
+      Script: {instanceID: 5452}
     - Class: 114
-      Script: {instanceID: 5578}
+      Script: {instanceID: 5580}
     - Class: 114
-      Script: {instanceID: 5732}
+      Script: {instanceID: 5734}
     - Class: 114
-      Script: {instanceID: 5756}
+      Script: {instanceID: 5758}
     - Class: 114
-      Script: {instanceID: 5798}
+      Script: {instanceID: 5800}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -661,7 +666,7 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
-      Hash: e0d0b2b71c47b30510a882c4e064fe58
+      Hash: 2e8ecba5c134389dd7dce79ee2ef4be4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
