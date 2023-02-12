@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.IO;
-using System;
 
 public class LoadSave : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class LoadSave : MonoBehaviour
 
     void Start()
     {
-        path = Path.Combine(Application.persistentDataPath, "Save.json");
+        path = Path.Combine(Application.persistentDataPath, "SaveGame.json");
         
         loadSave();
     }
@@ -22,10 +21,4 @@ public class LoadSave : MonoBehaviour
             RecordData.Record = save.Record; 
         }
     }
-}
-
-[Serializable]
-class Save
-{
-    public int Record;
 }

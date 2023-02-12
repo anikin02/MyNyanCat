@@ -18,7 +18,7 @@ I took graphics, music, sounds and font from the internet.
 3. New enemy
 4. **Fix Simple stars generation**
 5. **Balance speed**
-6. **Music**
+6. **Music** + Stop music when player is dying
 7. Sounds
 8. **Restart Key**
 9. **Health**

@@ -8,7 +8,8 @@ public class SaveGame : MonoBehaviour
 
     private void Start()
     {
-        path = Path.Combine(Application.persistentDataPath, "Save.json");
+        save = new Save();
+        path = Path.Combine(Application.persistentDataPath, "SaveGame.json");
     }
 
     private void saveRecord()
@@ -19,7 +20,7 @@ public class SaveGame : MonoBehaviour
     private void OnApplicationPause(bool pause)
     {
         if (pause)
-        { 
+        {
             saveRecord();
             File.WriteAllText(path, JsonUtility.ToJson(save));
         }   
